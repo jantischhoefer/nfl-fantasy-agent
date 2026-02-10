@@ -130,9 +130,9 @@ interface PointRange {
 }
 
 const POS_SCORING: Record<string, PointRange> = {
-  QB: { min: 10, max: 28, boomChance: 0.15, boomMin: 30, boomMax: 42, bustChance: 0.1 },
-  RB: { min: 4, max: 18, boomChance: 0.12, boomMin: 20, boomMax: 35, bustChance: 0.15 },
-  WR: { min: 3, max: 18, boomChance: 0.12, boomMin: 22, boomMax: 38, bustChance: 0.15 },
+  QB: { min: 8, max: 35, boomChance: 0.15, boomMin: 30, boomMax: 42, bustChance: 0.1 },
+  RB: { min: 4, max: 18, boomChance: 0.12, boomMin: 20, boomMax: 40, bustChance: 0.15 },
+  WR: { min: 3, max: 18, boomChance: 0.12, boomMin: 22, boomMax: 40, bustChance: 0.15 },
   TE: { min: 2, max: 14, boomChance: 0.1, boomMin: 16, boomMax: 26, bustChance: 0.2 },
   K:  { min: 2, max: 14, boomChance: 0.08, boomMin: 15, boomMax: 20, bustChance: 0.1 },
   DEF: { min: 1, max: 15, boomChance: 0.1, boomMin: 16, boomMax: 25, bustChance: 0.15 },
