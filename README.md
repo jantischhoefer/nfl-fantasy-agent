@@ -53,16 +53,16 @@ npx tsx --env-file=.env src/index.ts --week=5
 ## How It Works
 
 ```
-┌─────────────┐     ┌────────────────┐     ┌─────────────────┐
+┌──────────────┐     ┌────────────────┐     ┌──────────────────┐
 │ collectData  │────▶│ computeAwards  │────▶│   Agent (Claude) │
 │ (Sleeper API)│     │ (pure logic)   │     │ + researchPlayer │
-└─────────────┘     └────────────────┘     └────────┬────────┘
+└──────────────┘     └────────────────┘     └────────┬─────────┘
                                                      │
                                                      ▼
-                                            ┌─────────────────┐
+                                            ┌──────────────────┐
                                             │ formatNewsletter │
                                             │ (console + file) │
-                                            └─────────────────┘
+                                            └──────────────────┘
 ```
 
 1. **collectData** — Fetches NFL state, league info, rosters, matchups, transactions, and the player name database from the Sleeper API
