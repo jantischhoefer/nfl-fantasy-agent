@@ -13,12 +13,22 @@ import type { AgentStateType } from "../state.js";
 
 /**
  * Graph node: Fetches all league data from Sleeper for the target week.
+ * If leagueData is already present in state (e.g. from simulation), skips
+ * fetching entirely.
  * If no week is specified in state, uses the current NFL week (minus 1 for
  * completed games).
  */
 export async function collectDataNode(
   state: AgentStateType
 ): Promise<Partial<AgentStateType>> {
+  // If leagueData was already injected (simulation mode), skip API calls
+  if (state.leagueData) {
+    console.log(
+      `📦 Using pre-loaded league data (${state.leagueData.league.name}, Week ${state.leagueData.week})`
+    );
+    return { leagueData: state.leagueData, week: state.leagueData.week };
+  }
+
   const leagueId = config.leagueId;
 
   console.log("📡 Fetching NFL state...");
